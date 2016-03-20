@@ -1,0 +1,8 @@
+C:\Users\caion\Documents\CalcNumerico\Bisseccao\MetodoBisseccaoCSharp\MetodoBisseccaoCSharp\bin\Debug\MetodoBisseccaoCSharp.exe.config
+C:\Users\caion\Documents\CalcNumerico\Bisseccao\MetodoBisseccaoCSharp\MetodoBisseccaoCSharp\bin\Debug\MetodoBisseccaoCSharp.exe
+C:\Users\caion\Documents\CalcNumerico\Bisseccao\MetodoBisseccaoCSharp\MetodoBisseccaoCSharp\bin\Debug\MetodoBisseccaoCSharp.pdb
+C:\Users\caion\Documents\CalcNumerico\Bisseccao\MetodoBisseccaoCSharp\MetodoBisseccaoCSharp\bin\Debug\CalcNumericoUtilCSharp.dll
+C:\Users\caion\Documents\CalcNumerico\Bisseccao\MetodoBisseccaoCSharp\MetodoBisseccaoCSharp\bin\Debug\CalcNumericoUtilCSharp.pdb
+C:\Users\caion\Documents\CalcNumerico\Bisseccao\MetodoBisseccaoCSharp\MetodoBisseccaoCSharp\obj\Debug\MetodoBisseccaoCSharp.csprojResolveAssemblyReference.cache
+C:\Users\caion\Documents\CalcNumerico\Bisseccao\MetodoBisseccaoCSharp\MetodoBisseccaoCSharp\obj\Debug\MetodoBisseccaoCSharp.exe
+C:\Users\caion\Documents\CalcNumerico\Bisseccao\MetodoBisseccaoCSharp\MetodoBisseccaoCSharp\obj\Debug\MetodoBisseccaoCSharp.pdb

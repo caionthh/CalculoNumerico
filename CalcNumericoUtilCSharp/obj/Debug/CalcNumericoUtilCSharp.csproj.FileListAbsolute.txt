@@ -1,0 +1,5 @@
+C:\Users\caion\Documents\CalcNumerico\CalcNumericoUtilCSharp\bin\Debug\CalcNumericoUtilCSharp.dll
+C:\Users\caion\Documents\CalcNumerico\CalcNumericoUtilCSharp\bin\Debug\CalcNumericoUtilCSharp.pdb
+C:\Users\caion\Documents\CalcNumerico\CalcNumericoUtilCSharp\obj\Debug\CalcNumericoUtilCSharp.csprojResolveAssemblyReference.cache
+C:\Users\caion\Documents\CalcNumerico\CalcNumericoUtilCSharp\obj\Debug\CalcNumericoUtilCSharp.dll
+C:\Users\caion\Documents\CalcNumerico\CalcNumericoUtilCSharp\obj\Debug\CalcNumericoUtilCSharp.pdb
