@@ -6,15 +6,87 @@
 
 double euler = 2.718281828459045235360287;
 
+//Calcula o valor de f(x)
+double equacao(double d, double t, double i, double c, double x) {
+	return (d - (pow(euler, (-x*t / (2 * i)))
+		* cos(sqrt((1 / (i*c)) - pow(x / (2 * i), 2))*t)));
+}
+
 double bisseccao(double d, double t, double i, double c, double min, double max, int interacao) {
 
 	//Interacao
 	interacao += 1;
 
-	//
-	return 0;
+	//Raiz
+	double raiz = (min + max) / 2.0f;
+
+	//Limite de interacoes
+	if (interacao >= 2500)
+		return raiz;
+
+	//Calcular funcao
+	double eqMin = equacao(d, t, i, c, min);
+	double eqRaiz = equacao(d, t, i, c, raiz);
+
+	//Passo 3
+	double divisao = eqMin * eqRaiz;
+	//Seção inferior
+	if (divisao < 0) {
+		double newBisseccao = bisseccao(d, t, i, c, min, raiz, interacao);
+		return newBisseccao;
+	}
+	else if (divisao > 0) {
+		double newBisseccao = bisseccao(d, t, i, c, raiz, max, interacao);
+		return newBisseccao;
+	}
+	else
+	{
+		return raiz;
+	}
 }
 
+double bisseccaoLoop(double d, double t, double i, double c, double min, double max) {
+
+	//Interacao
+	int interacao = 1;
+
+	//Variaveis
+	double raiz, eqMin, eqRaiz, divisao, novoMin = min, novoMax = max;
+
+	do {
+		//Interacao
+		interacao += 1;
+
+		//Raiz
+		raiz = (novoMin + novoMax) / 2.0f;
+
+		//Calcular funcao
+		eqMin = equacao(d, t, i, c, novoMin);
+		eqRaiz = equacao(d, t, i, c, raiz);
+
+		//Passo 3
+		divisao = eqMin * eqRaiz;
+		//Seção inferior
+		if (divisao < 0) {
+			novoMax = raiz;
+		}
+		//Seção superior
+		else if (divisao > 0) {
+			novoMin = raiz;
+		}
+		//Achou raiz (EITA PORRA)
+		else
+		{
+			printf("Achou");
+			return raiz;
+		}
+
+
+	} while (interacao < 2000);
+
+	//Retorno
+	return raiz;
+}
 
 int main()
 {
@@ -43,41 +115,12 @@ int main()
 	*/
 
 	double min, max;
-	printf("Digite o intervalo da resistencia na porra da bisseccao do jean:");
+	printf("Digite o intervalo da resistencia:");
 	scanf_s("%lf", &min);
 	scanf_s("%lf", &max);
 
-	//Primeiro passo da bisseccao
-
-	double potMin = pow(euler, (-min*tempo / (2 * indutancia)));
-	printf("%lf", potMin);
-	double potRaiz = pow(min / (2 * indutancia), 2);
-	printf("%lf", potRaiz);
-	double raizCos = sqrt((1 / (indutancia*capacitancia)) - potRaiz);
-	printf("%lf", raizCos);
-	double cosMin = cos(raizCos*tempo);
-	printf("%lf", cosMin);
-
-	double calcMin = 
-		 potMin * cosMin;
-	double calcMax = 
-		pow(euler, (-max*tempo / (2 * indutancia)))
-		* cos(sqrt((1 / (indutancia*capacitancia)) - pow(max / (2 * indutancia), 2))*tempo);
-
-	double multMinMax = calcMin * calcMax;
-	printf("%lf", multMinMax);
-
-	if (multMinMax < 0) {
-		bisseccao(dissipacao, tempo, indutancia, capacitancia, min, max, 0);
-	}
-
-	//printf("%lf %lf %lf %lf", dissipacao, tempo, indutancia, capacitancia);
-
-
-	//	dissipacao = pow(euler, (-resistencia*tempo / 2 * indutancia))
-	//	* cos(sqrt((1 / indutancia*capacitancia) - pow(resistencia / 2 * indutancia, 2))*tempo);
-
-
+	double raiz = bisseccaoLoop(dissipacao, tempo, indutancia, capacitancia, min, max);
+	printf("%.100lf", raiz);
 
 	getchar();
 	getchar();
